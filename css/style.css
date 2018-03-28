@@ -1,0 +1,432 @@
+/*
+Inspired by the dribble shot http://dribbble.com/shots/1285240-Freebie-Flat-Pricing-Table?list=tags&tag=pricing_table
+*/
+
+/*--------- Font ------------*/
+@import url(http://fonts.googleapis.com/css?family=News+Cycle);
+
+	@font-face {
+    font-family: 'Adam';
+    src:url(../raw/Adam.woff) format('woff');
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*------ utiltity classes -----*/
+.fl{ float:left; }
+.fr{ float: right; }
+/*its also known as clearfix*/
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+} 
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1;  /*For IE 6/7 (trigger hasLayout) */
+}
+
+body {
+    background-color: #FFF;
+    font-family: 'News Cycle', sans-serif;
+    line-height: 1;
+    font-size: 16px;
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* -- Loading -- */
+
+#loading {
+  background: #000 none repeat scroll 0 0;
+  height: 100%;
+  margin-top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 9999999;
+  opacity: 0;
+	    -webkit-animation: fadeout 4s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeout 4s; /* Firefox < 16 */
+        -ms-animation: fadeout 4s; /* Internet Explorer */
+         -o-animation: fadeout 4s; /* Opera < 12.1 */
+            animation: fadeout 4s;
+}
+}
+#loading-center{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#loading-center-absolute {
+	position: absolute;
+	margin: 0 auto;
+}
+#image-splash {
+	width: 115px;
+}
+.object {
+	background: #ababab none repeat scroll 0 0;
+	height: 115px;
+	margin: 0 auto;
+	position: absolute;
+	width: 115px;
+}
+#object_three {
+    -webkit-animation: object_three 1.5s infinite;
+    animation: object_three 1.5s infinite;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+@-webkit-keyframes object_three {
+75% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+}
+@keyframes object_three {
+75% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+}
+
+@keyframes fadeout {
+    0%	 { opacity: 1; }
+    75%	{ opacity: 1; }
+	100%	{ opacity: 0; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeout {
+    0%	 { opacity: 1; }
+    75%	{ opacity: 1; }
+	100%	{ opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeout {
+    0%	 { opacity: 1; }
+    75%	{ opacity: 1; }
+	100%	{ opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeout {
+    0%	 { opacity: 1; }
+    75%	{ opacity: 1; }
+	100%	{ opacity: 0;}
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadeout {
+    0%	 { opacity: 1; }
+    75%	{ opacity: 1; }
+	100%	{ opacity: 0;}
+}
+
+/* End Loading */
+
+
+.pricing-table {
+    width: 90vw;
+	margin: 0px auto;
+    text-align: center;
+}
+.pricing-table .heading{
+    color: #000;
+    text-transform: uppercase;
+    font-size: 2.9vw;
+    margin: 4vw 2.5vw 0px 2.5vw;
+	letter-spacing: 1px;
+}
+.block{
+    width: 25%;
+	margin: 2.5vw 3.7vw 0px 3.7vw;
+    overflow: hidden;
+	align-self: center;
+/*    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;    */
+/*    border: 1px solid red;*/
+}
+/*Shared properties*/
+.title,.pt-footer{
+    color: #FEFEFE;
+    text-transform: capitalize;
+    line-height: 2.5;
+    position: relative;
+	font-size: 1.5vw;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.content{
+    position: relative;
+    color: #FEFEFE;
+    padding: 10px 0 10px 0;
+}
+/*arrow creation*/
+.content:after, .content:before,.pt-footer:before,.pt-footer:after {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.pt-footer:after,.pt-footer:before{
+    top:0;
+}
+.content:after,.pt-footer:after {
+	border-color: rgba(136, 183, 213, 0);	
+	border-width: 5px;
+	margin-left: -5px;
+}
+/*/arrow creation*/
+.price{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.625rem;
+}
+.price span{    
+    font-size: 5vw;
+    letter-spacing: 0px;
+    font-weight: bold;        
+}
+.price sup{
+    font-size: 1.5vw;    
+    position: absolute;    
+    top: 7px;
+    left: -7px;
+}
+.price sub{
+	font-size: 1.2vw;
+	position: absolute;
+	bottom: 3px;
+	right: -10px;
+}
+.hint{
+    font-size: 1.2vw;
+	letter-spacing: 0.5px;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.features{
+    list-style-type: none;    
+    background: #eee;
+    text-align: left;
+    color: #9C9C9C;
+    padding: 4vw;
+    font-size: 1.2vw;
+}
+.features li{
+    padding: 0.5vw 0;
+    width: 100%;
+}
+.features li img{
+	margin: 0px 0.5vw 0px 0px;
+	width: 2vw;
+}
+.pt-footer{
+    font-size: 1.1vw;
+    text-transform: capitalize;
+}
+/*ENGAGEMENT*/
+.engagement .title{        
+    background: #fff; 
+    font-family: 'Adam', sans-serif;
+	text-transform: uppercase;
+}
+.engagement .content,.engagement .pt-footer{
+    background: #212121;
+}
+.engagement .content:after{	
+	border-top-color: #212121;	
+}
+.engagement .pt-footer:after{
+    border-top-color: #eee;
+}
+/*PREWEDD*/
+.preweds .title{
+    background: #fff;
+    font-family: 'Adam', sans-serif;
+	text-transform: uppercase;
+}
+.preweds .content,.preweds .pt-footer{
+    background: #212121;
+}
+.preweds .content:after{	
+	border-top-color: #212121;	
+}
+.preweds .pt-footer:after{
+    border-top-color: #eee;
+}
+/*prewedg*/
+.prewedg .title{
+    background: #fff;
+    font-family: 'Adam', sans-serif;
+	text-transform: uppercase;
+}
+.prewedg .content,.prewedg .pt-footer{
+    background: #212121;
+}
+.prewedg .content:after{	
+	border-top-color: #212121;	
+}
+.prewedg .pt-footer:after{
+    border-top-color: #eee;
+}
+/*weddingb*/
+.weddingb .title{
+    background: #fff;
+    font-family: 'Adam', sans-serif;
+	text-transform: uppercase;
+}
+.weddingb .content,.weddingb .pt-footer{
+    background: #212121;
+}
+.weddingb .content:after{	
+	border-top-color: #212121;	
+}
+.weddingb .pt-footer:after{
+    border-top-color: #eee;
+}
+/*weddings*/
+.weddings .title{
+    background: #fff;
+    font-family: 'Adam', sans-serif;
+	text-transform: uppercase;
+}
+.weddings .content,.weddingb .pt-footer{
+    background: #212121;
+}
+.weddings .content:after{	
+	border-top-color: #212121;	
+}
+.weddings .pt-footer:after{
+    border-top-color: #eee;
+}
+/*weddingg*/
+.weddingg .title{
+    background: #fff;
+    font-family: 'Adam', sans-serif;
+	text-transform: uppercase;
+}
+.weddingg .content,.weddingb .pt-footer{
+    background: #212121;
+}
+.weddingg .content:after{	
+	border-top-color: #212121;	
+}
+.weddingg .pt-footer:after{
+    border-top-color: #eee;
+}
+.footer{
+    font-family: 'Adam', sans-serif;
+	color: #000000;
+	text-transform: capitalize;
+	margin-top: 5vw;
+	font-size: 2vw;
+	text-align: center;
+}
+/* -- Loading -- */
+
+#loading {
+  background: #000 none repeat scroll 0 0;
+  height: 100%;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999999;
+}
+#loading-center{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#loading-center-absolute {
+	height: auto;
+	left: 50%;
+	margin-left: -60px;
+	margin-top: -60px;
+	position: absolute;
+	top: 50%;
+	width: 120px;
+}
+.object {
+	background: #ababab none repeat scroll 0 0;
+	border-radius: 50%;
+	height: 10px;
+	left: 0px;
+	margin: -7px auto auto 52px;
+	position: absolute;
+	right: 0px;
+	top: 50%;
+	width: 10px;
+}
+#object_three {
+    -webkit-animation: object_three 1.5s infinite;
+    animation: object_three 1.5s infinite;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+@-webkit-keyframes object_three {
+75% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+}
+@keyframes object_three {
+75% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+}
+
+/* End Loading */
