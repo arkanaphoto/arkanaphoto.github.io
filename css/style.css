@@ -5,9 +5,9 @@ Inspired by the dribble shot http://dribbble.com/shots/1285240-Freebie-Flat-Pric
 /*--------- Font ------------*/
 @import url(http://fonts.googleapis.com/css?family=News+Cycle);
 
-	@font-face {
+    @font-face {
     font-family: 'Adam';
-    src:url('raw/Adam.woff') format('woff');
+    src:url(..raw/Adam.woff) format('woff');
 }
 * {
     margin: 0;
